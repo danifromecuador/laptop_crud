@@ -1,0 +1,11 @@
+<h1>CREATE LAPTOP</h1>
+
+<%= form_with model: @laptop do |form| %>
+  <%= form.label "laptop brand" %>
+  <%= form.text_field :lbrand %><br>
+  <%= form.label "laptop model" %>
+  <%= form.text_field :lmodel %><br>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to "return", "/laptops" %>
