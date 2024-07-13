@@ -1,0 +1,10 @@
+<h1>LAPTOPS INDEX</h1>
+
+<ul>
+<% @laptops.each do |laptop| %>
+  <li>
+    <%= link_to "Laptop ID #{laptop.id}", "/laptops/#{laptop.id}"  %>
+  </li>
+<% end %>
+
+<%= link_to "new", "/laptops/new" %>

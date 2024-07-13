@@ -1,0 +1,15 @@
+<h1>DETAILS</h1>
+<p>
+  id: <%= @laptop.id %><br>
+  brand: <%= @laptop.lbrand %><br>
+  model: <%= @laptop.lmodel %>
+</p>
+
+<%= link_to "return", "/laptops" %>
+<%= link_to "edit", "/laptops/#{@laptop.id}/edit" %>
+<%= link_to "destroy", "/laptops/#{@laptop.id}",
+  data: {
+    turbo_method: :delete,
+    turbo_confirm: "you sure?"
+  }
+%>
