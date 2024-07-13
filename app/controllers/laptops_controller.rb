@@ -1,6 +1,6 @@
 class LaptopsController < ApplicationController
   def index
-    @laptops = Laptop.all
+    @laptops = Laptop.all.sort
   end
 
   def show
@@ -21,6 +21,17 @@ class LaptopsController < ApplicationController
     end
   end
 
+  def edit
+    @laptop = Laptop.find(params[:id])
+  end
+
+  def update
+    @laptop = Laptop.find(params[:id])
+    if @laptop.update(laptop_params)
+      redirect_to "/laptops/#{params[:id]}"
+    end
+  end
+  
   private
   def laptop_params
     params.require(:laptop).permit(:lbrand, :lmodel)
