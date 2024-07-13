@@ -31,6 +31,12 @@ class LaptopsController < ApplicationController
       redirect_to "/laptops/#{params[:id]}"
     end
   end
+
+  def destroy
+    @laptop = Laptop.find(params[:id])
+    @laptop.destroy
+    redirect_to "/laptops"
+  end
   
   private
   def laptop_params
