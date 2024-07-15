@@ -59,10 +59,3 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
-
-
-
-gem 'net-pop', '~> 0.1.2'
-gem 'net-protocol', '~> 0.1.3'
-
-
