@@ -62,4 +62,5 @@ end
 
 
 
-gem 'net-protocol'
+gem 'net-protocol', '~> 0.1'
+gem 'net-pop', '~> 0.1'
