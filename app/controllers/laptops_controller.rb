@@ -28,7 +28,9 @@ class LaptopsController < ApplicationController
   def update
     @laptop = Laptop.find(params[:id])
     if @laptop.update(laptop_params)
-      redirect_to "/laptops/#{params[:id]}"
+      redirect_to "/laptops"
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -37,8 +39,9 @@ class LaptopsController < ApplicationController
     @laptop.destroy
     redirect_to "/laptops"
   end
-  
+
   private
+
   def laptop_params
     params.require(:laptop).permit(:lbrand, :lmodel)
   end
