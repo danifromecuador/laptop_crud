@@ -1,26 +1,18 @@
 <h1>EDIT LAPTOP</h1>
-
 <%= form_with model: @laptop do |form| %>
   <%= form.label "laptop brand" %>
   <%= form.text_field :lbrand %>
   <% @laptop.errors.full_messages_for(:lbrand).each do |message| %>
-    <% if message=="Lbrand can't be blank" %>
-      Laptop brand can't be blank
-      <% else %> message
-    <% end %>
+    <%= message.sub("Lbrand", "Brand") %>
   <% end %>
   <br>
   <br>
   <%= form.label "laptop model" %>
   <%= form.text_field :lmodel %>
   <% @laptop.errors.full_messages_for(:lmodel).each do |message| %>
-    <% if message=="Lmodel can't be blank" %>
-      Laptop model can't be blank
-      <% else %> message
-    <% end %>
+    <%= message.sub("Lmodel", "Model") %>
   <% end %>
   <br>
   <%= form.submit %>
 <% end %>
-
 <%= link_to "return", "/laptops/#{@laptop.id}" %>
