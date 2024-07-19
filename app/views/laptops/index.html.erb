@@ -3,7 +3,7 @@
 <ul>
 <% @laptops.each do |laptop| %>
   <li>
-    <%= link_to "Laptop ID #{laptop.id}", "/laptops/#{laptop.id}"  %>
+    <%= link_to "#{laptop.lbrand}...#{laptop.lmodel}", "/laptops/#{laptop.id}"  %>
   </li>
 <% end %>
 
